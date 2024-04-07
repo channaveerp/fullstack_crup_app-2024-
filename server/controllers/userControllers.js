@@ -102,7 +102,7 @@ export const editUsers = async (req, res) => {
     if (editResult) {
       return res
         .status(200)
-        .json({ message: 'dwetails updated successfully', id: editResult });
+        .json({ message: 'details updated successfully', id: editResult });
     }
     if (!editResult) {
       return res.status(404).json({ message: 'id not found' });

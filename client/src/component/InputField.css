@@ -1,0 +1,39 @@
+/* styles.css */
+.input-container {
+  margin-bottom: 20px;
+  width: 30%;
+
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: dodgerblue;
+}
+
+.button {
+  background-color: dodgerblue;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.button:hover {
+  background-color: #007bb6;
+}
