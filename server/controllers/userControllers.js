@@ -1,5 +1,6 @@
 // need use schema model
 import user from '../model/userSchema.js';
+import jwt from 'jsonwebtoken';
 
 export const userRegister = async (req, res) => {
   // take user inputs fro body
@@ -40,7 +41,18 @@ export const login = async (req, res) => {
     }
 
     if (isUserexist) {
-      return res.status(200).json({ message: 'user loged in successfully' });
+      const payload = { email: isUserexist.email };
+      console.log('payload', payload);
+      const secretKey = process.env.JWT_SECRET;
+      console.log('secretKey', secretKey);
+
+      const generatedToken = jwt.sign(payload, secretKey, { expiresIn: '1h' });
+
+      console.log('Generated token:', generatedToken);
+
+      return res
+        .status(200)
+        .json({ message: 'user loged in successfully', token: generatedToken });
     }
   } catch (err) {
     console.log('err', err);
